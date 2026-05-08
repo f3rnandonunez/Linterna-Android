@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.GestureTorch" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/soviet_black</item>
+        <item name="android:navigationBarColor">@color/soviet_black</item>
+        <item name="android:colorAccent">@color/soviet_red</item>
+    </style>
+</resources>
