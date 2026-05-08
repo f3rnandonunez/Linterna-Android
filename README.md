@@ -281,3 +281,55 @@ Similitud = 1.0 es coincidencia perfecta. El umbral recomendado para arrancar es
 ---
 
 *Motor MPE — arquitectura escalable para el ecosistema gestual.*
+
+---
+
+## Estado de producción inicial
+
+Este repositorio ahora incluye una primera implementación Android/Kotlin de GestureTorch sobre Motion Pattern Engine.
+
+### Stack
+
+- Android app con `minSdk 26`, `targetSdk 35` y `compileSdk 35`.
+- Kotlin con `kotlinx.serialization` para persistencia JSON de patrones.
+- UI clásica con Views/XML para minimizar fricción en sensores, permisos y linterna.
+
+### Módulos lógicos
+
+- `com.linterna.mpe.pattern`: modelos serializables y repositorio de patrones en archivo interno.
+- `com.linterna.mpe.motion`: normalización básica, filtro de energía, DTW, grabación de acelerómetro y escucha con ventana deslizante.
+- `com.linterna.gesturetorch.torch`: verificación de flash y control de linterna vía `CameraManager`.
+- `com.linterna.gesturetorch.ui`: pantalla MVP para grabar movimiento, activar escucha y probar linterna.
+
+### UI constructivista
+
+La pantalla inicial usa una proporción cromática de referencia 70-20-10:
+
+- 70% crema envejecido (`#E6D2A7`) como base.
+- 20% rojo soviético (`#B21F1F`) para acción primaria y señalética.
+- 10% negro carbón (`#171311`) para contraste, jerarquía y bloques tipográficos.
+
+### Cómo probar
+
+```bash
+gradle test
+gradle assembleDebug
+```
+
+> Nota: se requiere Android SDK instalado con API 35 para compilar la app Android. Los tests unitarios validan el núcleo DTW/energía/normalización.
+
+### Alcance del MVP actual
+
+- Graba un patrón de movimiento de 2 segundos usando `TYPE_LINEAR_ACCELERATION` y fallback a `TYPE_ACCELEROMETER`.
+- Normaliza las muestras restando la media de la ventana.
+- Guarda el patrón como JSON interno.
+- Compara la ventana en vivo con DTW.
+- Alterna la linterna cuando la similitud supera el umbral configurado.
+- Incluye cooldown para evitar toggles repetidos.
+
+### Próximos pasos
+
+1. Agregar `ForegroundService` con notificación persistente para escucha en background.
+2. Exponer sensibilidad baja/media/alta en UI.
+3. Medir falsos positivos con capturas reales.
+4. Ajustar normalización avanzada si el fallback de acelerómetro común introduce demasiada gravedad.

@@ -1,0 +1,99 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/soviet_cream"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/soviet_black"
+            android:letterSpacing="0.08"
+            android:padding="16dp"
+            android:text="GESTURETORCH"
+            android:textAllCaps="true"
+            android:textColor="@color/soviet_cream"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginTop="18dp"
+            android:background="@color/soviet_red" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/soviet_black"
+            android:padding="18dp"
+            android:text="Preparado para grabar un patrón de movimiento."
+            android:textColor="@color/soviet_cream"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/metricText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="12dp"
+            android:text="70% crema · 20% rojo · 10% negro"
+            android:textColor="@color/soviet_black"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/recordButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:backgroundTint="@color/soviet_red"
+            android:minHeight="58dp"
+            android:text="Grabar movimiento"
+            android:textAllCaps="true"
+            android:textColor="@color/soviet_cream"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/listenButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/soviet_black"
+            android:minHeight="58dp"
+            android:text="Activar escucha"
+            android:textAllCaps="true"
+            android:textColor="@color/soviet_cream"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/torchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/soviet_gold"
+            android:minHeight="58dp"
+            android:text="Probar linterna"
+            android:textAllCaps="true"
+            android:textColor="@color/soviet_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="@color/soviet_dark_red"
+            android:padding="14dp"
+            android:text="Grabá un gesto de 2 segundos. Luego activá escucha: si el patrón coincide, la linterna alterna encendido/apagado."
+            android:textColor="@color/soviet_cream"
+            android:textSize="15sp" />
+    </LinearLayout>
+</ScrollView>
